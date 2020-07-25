@@ -19,8 +19,9 @@ body {
 }
 
 .layout-container {
+  background-color: #fffaea;
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
-  padding: 20px;
+  flex-direction: column;
 }
