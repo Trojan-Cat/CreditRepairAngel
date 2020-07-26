@@ -1,3 +1,17 @@
+#Credit Repair Site
+A site that allows the user to log into the backend to netlify to post blogs,
+and a form that allows the people to fill in, and that's then sent to the
+client if it passes the checks for it to be sent
+
+##Using
+React
+Gatsby.js
+Styled-components
+Typography.js
+
+##Hosting
+Netlify
+
 <div align="center" style="margin-bottom:30px">
     <a href='https://github.com/vagr9k/gatsby-advanced-starter/blob/master/LICENSE'>
     <img src="https://img.shields.io/github/license/vagr9k/gatsby-advanced-starter.svg" alt="Logo" />
