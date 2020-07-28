@@ -12,6 +12,42 @@ Typography.js
 ##Hosting
 Netlify
 
+## TO-DO
+
+- [ ] Calculator
+  - [ ] Calculator checking
+  - [ ] Form Submissions
+  - [ ] Calculator Steps Display
+  - [ ] Captcha
+- [ ] Contact Form
+- [x] Netlify CMS
+
+#### Design
+
+- [ ] Design for Mobile
+  - [x] Homepage
+  - [ ] Calculator
+  - [ ] About, Contact
+  - [ ] Articles
+- [ ] Design for Ultrawide
+  - [ ] Homepage, split in two, but one side has
+        the image and content, and the other side just the calculator
+  - [ ] Calculator
+  - [ ] About, Contact
+  - [ ] Articles
+
+#### Testing
+
+- [ ] Jest
+- [ ] Unit
+- [ ] Intergration
+- [ ] Snapshot
+
+#### Documentation
+
+- [ ] Readme for devs
+- [ ] Netlify CMS, and Form documentation for user
+
 <div align="center" style="margin-bottom:30px">
     <a href='https://github.com/vagr9k/gatsby-advanced-starter/blob/master/LICENSE'>
     <img src="https://img.shields.io/github/license/vagr9k/gatsby-advanced-starter.svg" alt="Logo" />
