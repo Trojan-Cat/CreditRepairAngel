@@ -1,15 +1,18 @@
-#Credit Repair Site
+# Credit Repair Site
+
 A site that allows the user to log into the backend to netlify to post blogs,
 and a form that allows the people to fill in, and that's then sent to the
 client if it passes the checks for it to be sent
 
-##Using
+## Using
+
 React
 Gatsby.js
 Styled-components
 Typography.js
 
-##Hosting
+## Hosting
+
 Netlify
 
 ## TO-DO
