@@ -10,16 +10,24 @@ const SplitContent = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  height: 100vh;
+  height: 60vh;
   @media only screen and (max-width: 600px) {
-    height: 100%;
+    height: 50vh;
   }
+  justify-content: flex-end;
 `;
+//Using the justify-content to keep the image taking up all its space on the
+//right, once we hit the ultrawide monitors
 
 const ContentDisp = styled.div`
   width: 50%;
+  padding: 2rem;
   @media only screen and (max-width: 600px) {
     width: 100%;
+  }
+  @media only screen and (min-width: 2000px) {
+    width: 30%;
+    padding-right: 5rem;
   }
 `;
 
@@ -32,10 +40,13 @@ const Image = styled.div`
       rgba(255, 255, 255, 0) 100%
     ),
     url(${hands});
-  background-size: fit;
   background-size: cover;
+  background-position: 50% 50%;
   @media only screen and (max-width: 600px) {
     display: none;
+  }
+  @media only screen and (min-width: 2000px) {
+    width: 50%;
   }
 `;
 const Index = props => {

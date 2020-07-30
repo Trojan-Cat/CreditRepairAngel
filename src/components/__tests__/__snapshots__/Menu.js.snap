@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu renders correctly 1`] = `
+<div
+  className="sc-AxjAm fZkzAP"
+>
+  <a
+    className="sc-AxirZ kaqPxo"
+    href="/"
+  >
+    Home
+  </a>
+  <a
+    className="sc-AxirZ kaqPxo"
+    href="/about"
+  >
+    About
+  </a>
+  <a
+    className="sc-AxirZ kaqPxo"
+    href="/articles"
+  >
+    Articles
+  </a>
+  <a
+    className="sc-AxirZ kaqPxo"
+    href="/Contact"
+  >
+    Contact
+  </a>
+</div>
+`;

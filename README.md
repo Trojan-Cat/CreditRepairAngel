@@ -1,16 +1,55 @@
-#Credit Repair Site
+# Credit Repair Site
+
 A site that allows the user to log into the backend to netlify to post blogs,
 and a form that allows the people to fill in, and that's then sent to the
 client if it passes the checks for it to be sent
 
-##Using
+## Using
+
 React
 Gatsby.js
 Styled-components
 Typography.js
 
-##Hosting
+## Hosting
+
 Netlify
+
+## TO-DO
+
+- [ ] Calculator
+  - [ ] Calculator checking
+  - [ ] Form Submissions
+  - [ ] Calculator Steps Display
+  - [ ] Captcha
+- [ ] Contact Form
+- [x] Netlify CMS
+
+#### Design
+
+- [ ] Design for Mobile
+  - [x] Homepage
+  - [ ] Calculator
+  - [ ] About, Contact
+  - [ ] Articles
+- [ ] Design for Ultrawide
+  - [ ] Homepage, split in two, but one side has
+        the image and content, and the other side just the calculator
+  - [ ] Calculator
+  - [ ] About, Contact
+  - [ ] Articles
+
+#### Testing
+
+- [ ] Jest
+- [ ] Unit
+- [ ] Intergration
+- [ ] Snapshot
+
+#### Documentation
+
+- [ ] Readme for devs
+- [ ] Netlify CMS, and Form documentation for user
 
 <div align="center" style="margin-bottom:30px">
     <a href='https://github.com/vagr9k/gatsby-advanced-starter/blob/master/LICENSE'>
