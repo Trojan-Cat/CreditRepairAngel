@@ -4,7 +4,27 @@ import Layout from "../layout";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 
+import Calculator from "../components/Calculator/Calculator";
 import hands from "../images/hands.jpg";
+
+//Initial state for the debt form, passed to the calculate to do all the
+//validation
+const INITIAL_FORM_STATE = {
+  debtType: "",
+  debtAmount: "",
+  debtLetters: {
+    l1Date: "",
+    l1Amount: "",
+    l2Date: "",
+    l2Amount: "",
+    l3Date: "",
+    l3Amount: ""
+  },
+  movedSinceDebt: "",
+  attemptToPay: "",
+  tellCompany: "",
+  paymentPlay: ""
+};
 
 const SplitContent = styled.div`
   display: flex;
@@ -50,6 +70,13 @@ const Image = styled.div`
   }
 `;
 const Index = props => {
+  const { handleChange, values } = Calculator(INITIAL_FORM_STATE);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log("Autenticated", values.debtType);
+  };
+
   return (
     <Layout>
       <SplitContent>
@@ -75,6 +102,13 @@ const Index = props => {
         <Image />
       </SplitContent>
       <div>Calculator</div>
+      <form onSubmit={handleSubmit}>
+        <input
+          onChange={handleChange}
+          name="debtType"
+          value={values.debtType}
+        />
+      </form>
     </Layout>
   );
 };
