@@ -4,10 +4,21 @@ const Calculator = initialState => {
   const [values, setValues] = useState(initialState);
 
   const handleChange = e => {
-    setValues({ ...values, [e.target.name]: e.target.value });
+    /*  setValues({
+      ...values,
+      [e.target.name]: e.target.value
+    });
+    console.log(values);
   };
-
-  //Onsubmit to test out the data being submitted
+  */
+    console.log(values);
+    console.log(e.target.value);
+    const { name, value } = e.target;
+    setValues(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
 
   return { handleChange, values };
 };

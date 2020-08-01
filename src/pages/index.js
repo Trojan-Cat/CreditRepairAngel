@@ -11,19 +11,20 @@ import hands from "../images/hands.jpg";
 //validation
 const INITIAL_FORM_STATE = {
   debtType: "",
-  debtAmount: "",
-  debtLetters: {
-    l1Date: "",
-    l1Amount: "",
-    l2Date: "",
-    l2Amount: "",
-    l3Date: "",
-    l3Amount: ""
-  },
-  movedSinceDebt: "",
-  attemptToPay: "",
-  tellCompany: "",
-  paymentPlay: ""
+  debtAmount: 0,
+  recivedLetters: false,
+  l1Date: "", // Date or Uknown date option
+  l1Amount: 0,
+  l2Recived: false,
+  l2Date: "",
+  l2Amount: 0,
+  l3Recived: false,
+  l3Date: "",
+  l3Amount: 0,
+  movedSinceDebt: false,
+  attemptToPay: false,
+  tellCompany: false,
+  paymentPlan: false
 };
 
 const SplitContent = styled.div`
@@ -108,6 +109,59 @@ const Index = props => {
           name="debtType"
           value={values.debtType}
         />
+        <input
+          onChange={handleChange}
+          name="debtAmount"
+          value={values.debtAmount}
+        />
+        <input
+          onChange={handleChange}
+          name="recivedLetters"
+          value={values.recivedLetters}
+        />
+        <div>
+          <input onChange={handleChange} name="l1Date" value={values.l1Date} />
+          <label htmlFor="l1Amount">
+            What was the debt listed on that latter?
+          </label>
+          <input
+            onChange={handleChange}
+            name="l1Amount"
+            value={values.l1Amount}
+          />
+          <input
+            onChange={handleChange}
+            name="l2Recived"
+            value={values.l2Recived}
+          />
+        </div>
+        <div>
+          <input onChange={handleChange} name="l2Date" value={values.l2Date} />
+          <label htmlFor="l2Amount">
+            What was the debt listed on that latter?
+          </label>
+          <input
+            onChange={handleChange}
+            name="l2Amount"
+            value={values.l2Amount}
+          />
+          <input
+            onChange={handleChange}
+            name="l3Recived"
+            value={values.l3Recived}
+          />
+        </div>
+        <div>
+          <input onChange={handleChange} name="l3Date" value={values.l3Date} />
+          <label htmlFor="l3Amount">
+            What was the debt listed on that latter?
+          </label>
+          <input
+            onChange={handleChange}
+            name="l3Amount"
+            value={values.l3Amount}
+          />
+        </div>
       </form>
     </Layout>
   );
