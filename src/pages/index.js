@@ -71,7 +71,9 @@ const Image = styled.div`
   }
 `;
 const Index = props => {
-  const { handleChange, values } = Calculator(INITIAL_FORM_STATE);
+  const { handleChange, handleCheckBox, values } = Calculator(
+    INITIAL_FORM_STATE
+  );
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -115,9 +117,10 @@ const Index = props => {
           value={values.debtAmount}
         />
         <input
-          onChange={handleChange}
+          type="checkbox"
+          checked={values.recivedLetters}
+          onChange={handleCheckBox}
           name="recivedLetters"
-          value={values.recivedLetters}
         />
         <div>
           <input onChange={handleChange} name="l1Date" value={values.l1Date} />

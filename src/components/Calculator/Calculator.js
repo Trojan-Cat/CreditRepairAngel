@@ -3,8 +3,26 @@ import React, { useState } from "react";
 const Calculator = initialState => {
   const [values, setValues] = useState(initialState);
 
+  const handleCheckBox = e => {
+    const name = e.target.name;
+    const check = e.currentTarget.checked;
+    if (check) {
+      setValues(prevState => ({
+        ...prevState,
+        [name]: true
+      }));
+    } else {
+      setValues(prevState => ({
+        ...prevState,
+        [name]: false
+      }));
+    }
+  };
+
   const handleChange = e => {
-    /*  setValues({
+    console.log(e.target);
+    /*
+    setValues({
       ...values,
       [e.target.name]: e.target.value
     });
@@ -20,7 +38,7 @@ const Calculator = initialState => {
     }));
   };
 
-  return { handleChange, values };
+  return { handleChange, handleCheckBox, values };
 };
 
 export default Calculator;
