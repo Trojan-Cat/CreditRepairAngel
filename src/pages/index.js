@@ -32,10 +32,6 @@ const SplitContent = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  height: 60vh;
-  @media only screen and (max-width: 600px) {
-    height: 50vh;
-  }
   justify-content: flex-end;
 `;
 //Using the justify-content to keep the image taking up all its space on the
@@ -44,7 +40,7 @@ const SplitContent = styled.div`
 const ContentDisp = styled.div`
   width: 50%;
   padding: 2rem;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 900px) {
     width: 100%;
   }
   @media only screen and (min-width: 2000px) {
@@ -55,7 +51,7 @@ const ContentDisp = styled.div`
 
 const Image = styled.div`
   width: 50%;
-  height: 100%;
+  height: 65vh;
   background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.26) 0%,
@@ -64,7 +60,7 @@ const Image = styled.div`
     url(${hands});
   background-size: cover;
   background-position: 50% 50%;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 900px) {
     display: none;
   }
   @media only screen and (min-width: 2000px) {
@@ -72,6 +68,12 @@ const Image = styled.div`
   }
 `;
 
+const FormStyled = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 2rem;
+`;
 const Index = props => {
   const { handleChange, handleCheckBox, values } = Calculator(
     INITIAL_FORM_STATE
@@ -106,24 +108,30 @@ const Index = props => {
         </ContentDisp>
         <Image />
       </SplitContent>
-      <div>Calculator</div>
-      <form onSubmit={handleSubmit}>
+      <FormStyled onSubmit={handleSubmit}>
+        <label htmlFor="debtType">What type of debt do you have?</label>
         <input
           onChange={handleChange}
           name="debtType"
           value={values.debtType}
         />
+        <label htmlFor="debtAmount">How much is the debt?</label>
         <input
           onChange={handleChange}
           name="debtAmount"
           value={values.debtAmount}
         />
-        <input
-          type="checkbox"
-          checked={values.recivedLetters}
-          onChange={handleCheckBox}
-          name="recivedLetters"
-        />
+        <div>
+          <label htmlFor="recivedLetters">
+            Have you recived any letters about your debt?
+          </label>
+          <input
+            type="checkbox"
+            checked={values.recivedLetters}
+            onChange={handleCheckBox}
+            name="recivedLetters"
+          />
+        </div>
 
         {values.recivedLetters ? (
           <Letters
@@ -132,7 +140,7 @@ const Index = props => {
             values={values}
           />
         ) : null}
-      </form>
+      </FormStyled>
     </Layout>
   );
 };
