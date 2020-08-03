@@ -6,6 +6,7 @@ import styled from "styled-components";
 
 import Calculator from "../components/Calculator/Calculator";
 import hands from "../images/hands.jpg";
+import Letters from "../components/Letters/Letters";
 
 //Initial state for the debt form, passed to the calculate to do all the
 //validation
@@ -70,6 +71,7 @@ const Image = styled.div`
     width: 50%;
   }
 `;
+
 const Index = props => {
   const { handleChange, handleCheckBox, values } = Calculator(
     INITIAL_FORM_STATE
@@ -122,49 +124,14 @@ const Index = props => {
           onChange={handleCheckBox}
           name="recivedLetters"
         />
-        <div>
-          <input onChange={handleChange} name="l1Date" value={values.l1Date} />
-          <label htmlFor="l1Amount">
-            What was the debt listed on that latter?
-          </label>
-          <input
-            onChange={handleChange}
-            name="l1Amount"
-            value={values.l1Amount}
+
+        {values.recivedLetters ? (
+          <Letters
+            handleChange={handleChange}
+            handleCheckbox={handleCheckBox}
+            values={values}
           />
-          <input
-            onChange={handleChange}
-            name="l2Recived"
-            value={values.l2Recived}
-          />
-        </div>
-        <div>
-          <input onChange={handleChange} name="l2Date" value={values.l2Date} />
-          <label htmlFor="l2Amount">
-            What was the debt listed on that latter?
-          </label>
-          <input
-            onChange={handleChange}
-            name="l2Amount"
-            value={values.l2Amount}
-          />
-          <input
-            onChange={handleChange}
-            name="l3Recived"
-            value={values.l3Recived}
-          />
-        </div>
-        <div>
-          <input onChange={handleChange} name="l3Date" value={values.l3Date} />
-          <label htmlFor="l3Amount">
-            What was the debt listed on that latter?
-          </label>
-          <input
-            onChange={handleChange}
-            name="l3Amount"
-            value={values.l3Amount}
-          />
-        </div>
+        ) : null}
       </form>
     </Layout>
   );
