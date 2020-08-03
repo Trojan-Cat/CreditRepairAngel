@@ -128,7 +128,7 @@ const Index = props => {
         {values.recivedLetters ? (
           <Letters
             handleChange={handleChange}
-            handleCheckbox={handleCheckBox}
+            handleCheckBox={handleCheckBox}
             values={values}
           />
         ) : null}
