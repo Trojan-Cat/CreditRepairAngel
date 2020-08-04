@@ -11,7 +11,12 @@ import Letters from "../components/Letters/Letters";
 //Initial state for the debt form, passed to the calculate to do all the
 //validation
 const INITIAL_FORM_STATE = {
-  debtType: "",
+  debtType: [
+    { type: "Telephone bill", selected: false },
+    { type: "Energy bill", selected: false },
+    { type: "Bank related", selected: false },
+    { type: "Other", selected: false }
+  ],
   debtAmount: 0,
   recivedLetters: false,
   l1Date: "", // Date or Uknown date option
@@ -104,17 +109,23 @@ const Index = props => {
             Aliquam laoreet ornare mauris, a molestie sem lobortis quis. Ut
             massa tortor, euismod quis porttitor cursus.
           </p>
-          <div>Link to calculator</div>
         </ContentDisp>
         <Image />
       </SplitContent>
       <FormStyled onSubmit={handleSubmit}>
         <label htmlFor="debtType">What type of debt do you have?</label>
-        <input
-          onChange={handleChange}
-          name="debtType"
-          value={values.debtType}
-        />
+        {values.debtType.map((lo, idx) => {
+          return (
+            <input
+              key={idx}
+              type="radio"
+              name={values.debtType}
+              value={lo.type}
+              checked={!!lo.selected}
+              onChange={handleChange}
+            />
+          );
+        })}
         <label htmlFor="debtAmount">How much is the debt?</label>
         <input
           onChange={handleChange}

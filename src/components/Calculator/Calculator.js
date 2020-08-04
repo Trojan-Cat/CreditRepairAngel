@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Calculator = initialState => {
   const [values, setValues] = useState(initialState);
+  const [valuesE, setValuesE] = useEffect(initialState);
 
   const handleCheckBox = e => {
     const name = e.target.name;
@@ -19,8 +20,24 @@ const Calculator = initialState => {
     }
   };
 
+  const handle = e => {
+    const { name, value } = e.target;
+    const check = e.currentTarget.checked;
+
+    if (check) {
+      setValues(prevState => ({
+        ...prevState,
+        [name]: true
+      }));
+    } else {
+      setValues(prevState => ({
+        ...prevState,
+        [name]: false
+      }));
+    }
+  };
+
   const handleChange = e => {
-    console.log(e.target);
     /*
     setValues({
       ...values,
