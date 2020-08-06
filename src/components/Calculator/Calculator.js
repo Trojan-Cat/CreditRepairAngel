@@ -24,13 +24,20 @@ const Calculator = initialState => {
   const handleChange = e => {
     const check = e.currentTarget.checked;
     let { name, value } = e.target;
+    console.log("called");
     // We are searching to see if the name is part of debtType if it is then we
     // will change name to have debt.target.name instead of just target.name
     for (let i = 0; i < debtArray.length; i++) {
       if (debtArray[i].type === name) {
+        //const arrIndex = values.debtType[i];
+        // const newStatus = { type: values.debtType[i].type, selected: true };
+        let newArr = [...values.debtType];
+        newArr[i].selected = !newArr[i].selected;
         setValues(prevState => ({
           ...prevState,
-          debtType: [...prevState.debtType, { type: name, selected: true }]
+          debtType: [...newArr]
+          //debtType: [...prevState.debtType, { type: name, selected: true }]
+          //  debtType: [...prevState.debtType, debtType[i] = {...prevState.debtType[i].type, debtType[i].selected: true}]
         }));
         break;
       }

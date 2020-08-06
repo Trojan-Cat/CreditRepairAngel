@@ -113,7 +113,7 @@ const Index = props => {
               key={id}
               type="radio"
               name={id.type}
-              //  value={i.selected}
+              value={id.selected}
               checked={id.selected}
               onChange={handleChange}
             />
