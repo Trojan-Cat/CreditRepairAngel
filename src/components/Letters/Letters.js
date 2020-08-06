@@ -13,7 +13,7 @@ const LettersContainer = styled.div`
 const StyledLetter = styled.div``;
 
 const Letters = props => {
-  const { handleChange, handleCheckBox, values } = props;
+  const { handleChange, handleCheckBox, handle, values } = props;
   return (
     <LettersContainer>
       <StyledLetter>

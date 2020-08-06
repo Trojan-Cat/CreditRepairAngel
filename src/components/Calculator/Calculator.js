@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 const Calculator = initialState => {
+  const debtArray = initialState.debtType;
   const [values, setValues] = useState(initialState);
-  const [valuesE, setValuesE] = useEffect(initialState);
+  //const [debtType, setDebtType] = useState(initialdebtType);
 
   const handleCheckBox = e => {
     const name = e.target.name;
@@ -20,39 +21,27 @@ const Calculator = initialState => {
     }
   };
 
-  const handle = e => {
-    const { name, value } = e.target;
-    const check = e.currentTarget.checked;
-
-    if (check) {
-      setValues(prevState => ({
-        ...prevState,
-        [name]: true
-      }));
-    } else {
-      setValues(prevState => ({
-        ...prevState,
-        [name]: false
-      }));
-    }
-  };
-
   const handleChange = e => {
-    /*
-    setValues({
-      ...values,
-      [e.target.name]: e.target.value
-    });
+    const check = e.currentTarget.checked;
+    let { name, value } = e.target;
+    // We are searching to see if the name is part of debtType if it is then we
+    // will change name to have debt.target.name instead of just target.name
+    for (let i = 0; i < debtArray.length; i++) {
+      if (debtArray[i].type === name) {
+        setValues(prevState => ({
+          ...prevState,
+          debtType: [...prevState.debtType, { type: name, selected: true }]
+        }));
+        break;
+      }
+    }
+
+    console.log(values.debtType[0].selected),
+      setValues(prevState => ({
+        ...prevState,
+        [name]: value
+      }));
     console.log(values);
-  };
-  */
-    console.log(values);
-    console.log(e.target.value);
-    const { name, value } = e.target;
-    setValues(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
   };
 
   return { handleChange, handleCheckBox, values };

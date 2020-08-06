@@ -12,9 +12,9 @@ import Letters from "../components/Letters/Letters";
 //validation
 const INITIAL_FORM_STATE = {
   debtType: [
-    { type: "Telephone bill", selected: false },
-    { type: "Energy bill", selected: false },
-    { type: "Bank related", selected: false },
+    { type: "Telephone_bill", selected: false },
+    { type: "Energy_bill", selected: false },
+    { type: "Bank_related", selected: false },
     { type: "Other", selected: false }
   ],
   debtAmount: 0,
@@ -98,13 +98,6 @@ const Index = props => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non
             tincidunt lorem. Nunc luctus pharetra ipsum quis ultrices. Duis
             vehicula hendrerit facilisis. Aliquam ac mattis eros. Suspendisse
-            fringilla quam ac odio porttitor, a maximus magna tincidunt.
-            Praesent finibus dui vulputate luctus viverra. Curabitur lectus
-            libero, dictum eget sollicitudin nec, faucibus hendrerit quam. In
-            suscipit scelerisque vehicula. Aliquam elementum ac dui dictum
-            viverra. Sed in massa posuere, condimentum lectus non, ullamcorper
-            dui. Phasellus arcu dui, elementum et ligula a, vestibulum euismod
-            dui. Fusce congue quam id metus feugiat efficitur. Ut in nisl et
             sapien rutrum fringilla id id tellus. Suspendisse et feugiat purus.
             Aliquam laoreet ornare mauris, a molestie sem lobortis quis. Ut
             massa tortor, euismod quis porttitor cursus.
@@ -114,14 +107,14 @@ const Index = props => {
       </SplitContent>
       <FormStyled onSubmit={handleSubmit}>
         <label htmlFor="debtType">What type of debt do you have?</label>
-        {values.debtType.map((lo, idx) => {
+        {values.debtType.map(id => {
           return (
             <input
-              key={idx}
+              key={id}
               type="radio"
-              name={values.debtType}
-              value={lo.type}
-              checked={!!lo.selected}
+              name={id.type}
+              //  value={i.selected}
+              checked={id.selected}
               onChange={handleChange}
             />
           );
