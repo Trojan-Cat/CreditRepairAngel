@@ -80,7 +80,7 @@ const FormStyled = styled.form`
   padding: 2rem;
 `;
 const Index = props => {
-  const { handleChange, handleCheckBox, values } = Calculator(
+  const { handleChange, handleCheckBox, handleDebtType, values } = Calculator(
     INITIAL_FORM_STATE
   );
 
@@ -107,15 +107,16 @@ const Index = props => {
       </SplitContent>
       <FormStyled onSubmit={handleSubmit}>
         <label htmlFor="debtType">What type of debt do you have?</label>
-        {values.debtType.map(id => {
+        {values.debtType.map((id, idx) => {
           return (
             <input
-              key={id}
-              type="radio"
+              key={idx}
+              id={idx}
+              type="checkBox"
               name={id.type}
-              value={id.selected}
-              checked={id.selected}
-              onChange={handleChange}
+              // value={id.selected}
+              checked={idx.selected}
+              onChange={handleDebtType}
             />
           );
         })}
